@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+<body>
+
+{% include 'header.html' %}
+
+<div class="content">
+    {% for f in film %}
+        <div class="film-card">
+            <div class="film-picture">
+                <img src="{{ f.picture.url }}" class="film-card-picture-size">
+            </div>
+
+            <div class="film-card-name">
+                {{ f.name }}
+            </div>
+            <div class="film-card-content">
+                <span>{{ f.price }} BYN</span>
+                <span>{{ f.age }}</span>
+            </div>
+            <div class="film-card-button">
+                <a href="{{ f.slug }}">Подробнее</a>
+            </div>
+
+
+        </div>
+    {% endfor %}
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'film.css' %}">
+    <title></title>
+</head>
+<body>
+{% include 'header.html' %}
+
+<div class="content">
+<div class="image">
+    <img src="{{ film.picture.url }}" alt="image not found :<(">
+</div>
+    <div class="description">
+        <div class="description-name"><span>{{ film.name }}</span></div>
+        <div class="description-pair">Длительность:<span>{{ film.duration }} мин.</span></div>
+        <div class="description-pair">Жанр:<span>{{ film.genre }}</span></div>
+        <div class="description-pair">Стоимость:<span>{{ film.price }} BYN</span></div>
+        <div class="description-pair">Возрастные ограничения:<span>{{ film.age}}</span></div>
+        <div class="description-text">{{ film.description }}</div>
+
+
+
+
+
+    </div>
+</div>
+
+</body>
+</html>
