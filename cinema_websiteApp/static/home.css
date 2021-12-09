@@ -12,11 +12,6 @@ body {
 
 
 }
-.header {
-    width: 100%;
-    height: 50px;
-    background-color: #1c162a;
-}
 
 .content {
     display: flex;
@@ -77,4 +72,24 @@ body {
 a {
     text-decoration: none;
     color: black;
+}
+
+.fs-4{
+    padding-left: 200%;
+}
+
+.home-button {
+    width: 120px;
+    height: 40px;
+    background-color: #4e3a80;
+    color: #FFF;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #FFFFFF;
+}
+
+.home-button-text {
+    color: red;
+
+
 }

@@ -1,13 +1,10 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'film.css' %}">
-    <title></title>
-</head>
-<body>
-{% include 'header.html' %}
+{% extends 'header.html' %}
+
+{% block title %}
+Информация о фильме
+{% endblock %}
+
+{% block content %}
 
 <div class="content">
 <div class="image">
@@ -28,5 +25,4 @@
     </div>
 </div>
 
-</body>
-</html>
+{% endblock %}

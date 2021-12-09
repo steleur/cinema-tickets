@@ -1,20 +1,16 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Главная</title>
-    <link rel="stylesheet" href="{% static 'home.css' %}">
-</head>
-<body>
+{% extends 'header.html' %}
 
-{% include 'header.html' %}
+{% block title %}
+Главная страница
+{% endblock %}
+
+{% block content %}
 
 <div class="content">
     {% for f in film %}
         <div class="film-card">
             <div class="film-picture">
-                <img src="{{ f.picture.url }}" class="film-card-picture-size">
+                <img src="{{ f.picture.url }}" class="film-card-picture-size" alt=":<(">
             </div>
 
             <div class="film-card-name">
@@ -33,6 +29,4 @@
     {% endfor %}
 </div>
 
-
-</body>
-</html>
+{% endblock %}
