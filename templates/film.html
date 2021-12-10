@@ -10,23 +10,59 @@
 {% include 'header.html' %}
 
 <div class="content">
-<div class="image">
-    <img src="{{ film.picture.url }}" alt="image not found :<(">
-</div>
+    <div class="image">
+        <img src="{{ film.picture.url }}" alt="image not found :<(">
+    </div>
+
     <div class="description">
         <div class="description-name"><span>{{ film.name }}</span></div>
         <div class="description-pair">Длительность:<span>{{ film.duration }} мин.</span></div>
         <div class="description-pair">Жанр:<span>{{ film.genre }}</span></div>
         <div class="description-pair">Стоимость:<span>{{ film.price }} BYN</span></div>
-        <div class="description-pair">Возрастные ограничения:<span>{{ film.age}}</span></div>
+        <div class="description-pair">Возрастные ограничения:<span>{{ film.age }}</span></div>
         <div class="description-text">{{ film.description }}</div>
+    </div>
 
-
-
-
-
+    <div class="description-button">
+        <button class="buy-button" id="buy-button">Купить билеты</button>
     </div>
 </div>
+
+
+<div class="modal-wrapper" id="modal-wrapper">
+    <div id="myModal" class="modal">
+        <div class="modal-inner">
+            <div class="modal-header">
+                <h1 class="modal-window-header">Выберите количество:</h1>
+                <span class="close">&times;</span>
+            </div>
+            <form method="post">
+                {% csrf_token %}
+                <div class="modal-content">
+                    <button id="decrement-button" class="decrement">-</button>
+                    <input type="text" class="counter" value="1" readonly>
+                    <button id="increment-button" class="increment">+</button>
+                </div>
+                <div class="payment-header">
+                    <h1 class="modal-window-header">Способ оплаты:</h1>
+                </div>
+
+{#                <div class="modal-content">#}
+{#                    <label>Контактный номер: <input type="tel" class="phone-number" required#}
+{#                                                    name="phone-number"></label>#}
+{#                </div>#}
+
+                <div class="button-confirm">
+                    <button id="order" class="order">Оформить заказ</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="{% static 'film.js' %}"></script>
 
 </body>
 </html>
