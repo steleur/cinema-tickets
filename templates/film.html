@@ -15,7 +15,7 @@
     </div>
 
     <div class="description">
-        <div class="description-name"><span>{{ film.name }}</span></div>
+        <div class="description-name" ><span id="film-name">{{ film.name }}</span></div>
         <div class="description-pair">Длительность:<span>{{ film.duration }} мин.</span></div>
         <div class="description-pair">Жанр:<span>{{ film.genre }}</span></div>
         <div class="description-pair">Стоимость:<span id="price">{{ film.price }} BYN</span></div>
@@ -39,7 +39,7 @@
             {% csrf_token %}
             <div class="modal-content">
                 <button id="decrement-button" class="decrement">-</button>
-                <input type="number" class="counter" id="counter" value="" readonly>
+                <input type="number" class="counter" id="counter" value="0" readonly>
                 <button id="increment-button" class="increment">+</button>
             </div>
             <div class="payment-header">
@@ -48,17 +48,17 @@
 
             <div class="modal-content-data">
                 <label for="number">Контактный номер: </label>
-                <input type="tel" class="phone-number" required name="number">
+                <input type="tel" class="phone-number" required name="number" id="number">
             </div>
 
             <div class="modal-content-data">
                 <label for="name">Фамилия, Имя: </label>
-                <input type="tel" class="phone-number" required name="name">
+                <input type="tel" class="phone-number" required name="name" id="name">
             </div>
 
 
             <div class="button-confirm">
-                <button id="order" class="order">Оформить заказ</button>
+                <button id="confirm-button" class="order">Оформить заказ</button>
             </div>
 
         </div>
