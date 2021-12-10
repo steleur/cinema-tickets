@@ -102,7 +102,7 @@ body {
     width: 100%;
 }
 
-.modal-window-header {
+.modal-window-header, .modal-window-price {
     font-size: 30px;
     margin: 0;
 
@@ -156,17 +156,14 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    align-items: center;
     justify-content: center;
-    align-items: flex-start;
     padding: 20px;
     gap: 30px 10px;
     font-size: 18px;
 }
 
-.street, .name, .number, .phone-number {
-    width: 150px;
-    height: 20px;
-}
+
 
 .building {
     width: 50px;
@@ -175,8 +172,8 @@ body {
 
 .counter {
     border: none;
-    width: 15px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     text-align: center;
 }
 
@@ -190,8 +187,34 @@ body {
 
 .decrement, .increment {
     background-color: #1c162a;
+    width: 30px;
+    height: 30px;
     color: #FFF;
     border-radius: 5px;
     border-style: solid;
     border-color: #FFFFFF;
+}
+
+input {
+    -webkit-appearance: none;
+    margin: 0;
+    padding: 0;
+}
+
+.modal-content-data {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.phone-number {
+    width: 150px;
+    outline: none;
+    border-radius: 3px;
+    border-color: black;
+
 }

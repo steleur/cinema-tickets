@@ -18,7 +18,7 @@
         <div class="description-name"><span>{{ film.name }}</span></div>
         <div class="description-pair">Длительность:<span>{{ film.duration }} мин.</span></div>
         <div class="description-pair">Жанр:<span>{{ film.genre }}</span></div>
-        <div class="description-pair">Стоимость:<span>{{ film.price }} BYN</span></div>
+        <div class="description-pair">Стоимость:<span id="price">{{ film.price }} BYN</span></div>
         <div class="description-pair">Возрастные ограничения:<span>{{ film.age }}</span></div>
         <div class="description-text">{{ film.description }}</div>
     </div>
@@ -36,26 +36,30 @@
                 <h1 class="modal-window-header">Выберите количество:</h1>
                 <span class="close">&times;</span>
             </div>
-            <form method="post">
-                {% csrf_token %}
-                <div class="modal-content">
-                    <button id="decrement-button" class="decrement">-</button>
-                    <input type="text" class="counter" value="1" readonly>
-                    <button id="increment-button" class="increment">+</button>
-                </div>
-                <div class="payment-header">
-                    <h1 class="modal-window-header">Способ оплаты:</h1>
-                </div>
+            {% csrf_token %}
+            <div class="modal-content">
+                <button id="decrement-button" class="decrement">-</button>
+                <input type="number" class="counter" id="counter" value="" readonly>
+                <button id="increment-button" class="increment">+</button>
+            </div>
+            <div class="payment-header">
+                <h1 class="modal-window-price" id="modal-window-price"></h1>
+            </div>
 
-{#                <div class="modal-content">#}
-{#                    <label>Контактный номер: <input type="tel" class="phone-number" required#}
-{#                                                    name="phone-number"></label>#}
-{#                </div>#}
+            <div class="modal-content-data">
+                <label for="number">Контактный номер: </label>
+                <input type="tel" class="phone-number" required name="number">
+            </div>
 
-                <div class="button-confirm">
-                    <button id="order" class="order">Оформить заказ</button>
-                </div>
-            </form>
+            <div class="modal-content-data">
+                <label for="name">Фамилия, Имя: </label>
+                <input type="tel" class="phone-number" required name="name">
+            </div>
+
+
+            <div class="button-confirm">
+                <button id="order" class="order">Оформить заказ</button>
+            </div>
 
         </div>
     </div>
@@ -63,6 +67,7 @@
 
 
 <script src="{% static 'film.js' %}"></script>
+
 
 </body>
 </html>

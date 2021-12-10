@@ -3,7 +3,29 @@ openModalButton = document.getElementById('buy-button')
 span = document.getElementsByClassName("close")[0];
 modalWrapper = document.getElementById('modal-wrapper')
 counter = document.getElementById('counter')
+totalPrice = document.getElementById('modal-window-price')
+price = document.getElementById('price')
 
+
+counter.value = 1
+decrementButton = document.getElementById('decrement-button')
+incrementButton = document.getElementById('increment-button')
+
+
+incrementButton.addEventListener('click',(e) => {
+    counter.value = Number(counter.value) + 1;
+    totalPrice.innerHTML = "К оплате: " + Number(price.innerHTML) * counter.value + " BYN"
+})
+
+decrementButton.addEventListener('click',(e) => {
+    if (counter.value > 1) {
+        counter.value = Number(counter.value) - 1;
+            totalPrice.innerHTML = "К оплате: " + Number(price.innerHTML) * counter.value + " BYN"
+
+    } else {
+    }
+
+})
 openModalButton.onclick = function () {
     modalWrapper.style.display = 'flex';
 }
@@ -21,17 +43,3 @@ window.onclick = function(event) {
 
 
 
-decrementButton = document.getElementById('decrement-button')
-incrementButton = document.getElementById('increment-button')
-
-incrementButton.addEventListener('click',(e) => {
-    counter.value = Number(counter.value) + 1;
-})
-
-decrementButton.addEventListener('click',(e) => {
-    if (counter.value > 1) {
-      counter.value = Number(counter.value) - 1;
-    } else {
-    }
-
-})
