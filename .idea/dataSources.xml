@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="db [2]" uuid="7575eeeb-bca1-4867-abdd-ef2ebdc3e21d">
+    <data-source source="LOCAL" name="db" uuid="cd878545-30bf-4cbe-8e2a-2220e8b6e4a8">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\ikhom\Documents\kiryl\cinema-tickets\db.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:D:\Workspace\python\cinema_website\db.sqlite3</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
       <libraries>
         <library>

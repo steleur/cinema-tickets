@@ -13,11 +13,7 @@ body {
 
 }
 
-.header {
-    width: 100%;
-    height: 50px;
-    background-color: #1c162a;
-}
+
 
 .content {
     display: flex;
@@ -79,9 +75,14 @@ body {
     border-color: #FFFFFF;
 }
 
+.buy-button:hover {
+    cursor: pointer;
+}
+
+
 .modal {
     width: 520px;
-    height: 520px;
+    height: 400px;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -89,7 +90,7 @@ body {
     margin-top: -260px;
     z-index: 1;
     background-color: #ffffff;
-    border-radius: 30px;
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
 
@@ -174,6 +175,9 @@ body {
     width: 30px;
     height: 30px;
     text-align: center;
+    align-self: center;
+    padding-left: 10px;
+    font-size: 20px;
 }
 
 
@@ -182,6 +186,22 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
+}
+.confirm-button:hover {
+    cursor: pointer;
+}
+
+
+.confirm-button {
+    margin-top: 30px;
+    width: 120px;
+    height: 40px;
+    background-color: #1c162a;
+    color: #FFF;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #FFFFFF;
+
 }
 
 .decrement, .increment {
@@ -211,7 +231,9 @@ input {
 }
 
 .phone-number {
-    width: 150px;
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
     outline: none;
     border-radius: 3px;
     border-color: black;

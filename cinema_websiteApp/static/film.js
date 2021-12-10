@@ -38,10 +38,18 @@ span.onclick = function () {
 }
 
 window.onclick = function (event) {
-    if (event.target === modalWrapper) {
+    if (event.target === modalWrapper && (event.key === 'Escape')) {
         modalWrapper.style.display = 'none';
 
     }
+}
+
+window.onkeydown = e => {
+    if (e.key === 'Escape') {
+        modalWrapper.style.display = 'none';
+
+    }
+
 }
 
 
@@ -66,7 +74,13 @@ confirmButton.onclick = e => {
         }).then(
             r => console.log(r)
         )
+        modalWrapper.style.display = 'none'
+        document.getElementById('name').value = ''
+        document.getElementById('number').value = ''
+        counter.value = 1
+        totalPrice.innerHTML = "К оплате: " + Number(price.innerHTML.slice(0, -4)) * counter.value + " BYN"
 
+        alert("Заказ успешно оформлен!")
 
     }
 }
