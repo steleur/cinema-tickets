@@ -11,4 +11,5 @@ class FilmAdmin(admin.ModelAdmin):
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ('film_name', 'name', 'phone_number', 'tickets','total_price')
+    list_display = ('film_name', 'name', 'phone_number', 'tickets', 'total_price')
+    list_filter = ('film_name', )
